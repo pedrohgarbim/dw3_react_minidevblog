@@ -1,5 +1,6 @@
 import React from 'react'
 
+var teste = 8
 const Form = () => {
     const handleMyEvent =() =>{
         console.log()
@@ -13,6 +14,7 @@ const Form = () => {
         }
     }
   return (
+    <>
     <div>
         <div>
             <button onClick={handleMyEvent}>Clique Aqui</button>
@@ -32,6 +34,13 @@ const Form = () => {
             {renderButton(false)}
         </div>
     </div>
+    <div>
+        <strong>Valor:</strong>{teste}
+        <button onClick={() => {teste = 12; console.log(teste)}}>Aperte e mude</button>
+        <strong>Valor:</strong>{teste}
+    </div>
+    </>
+
   )
 }
 
