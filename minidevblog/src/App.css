@@ -2,3 +2,9 @@
   min-height: 60vh;
   margin-bottom: 5px;
 }
+
+.load{
+  display: flex;
+  justify-content: center;
+}
+

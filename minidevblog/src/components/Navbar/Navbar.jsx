@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
-        MiniBlog
+        MiniDevBlog
       </NavLink>
       <ul className={styles.links_list}>
         <li>

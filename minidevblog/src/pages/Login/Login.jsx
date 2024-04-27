@@ -31,18 +31,18 @@ const Login = () => {
 
     return (
         <div className={styles.login}>
-            <h1>LOGIN</h1>
-            <p>faça o login para utilizar o Blog</p>
+            <h1>login</h1>
+            <p>login to use the minidevblog</p>
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>e-mail:</span>
-                    <input type="email" name="email" required placeholder="e-mail do usuário" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                    <input type="email" name="email" required placeholder="user email" onChange={(e) => setEmail(e.target.value)} value={email}/>
                 </label>
                 <label>
-                    <span>senha:</span>
-                    <input type="password" name="password" required placeholder="insira a senha" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                    <span>password:</span>
+                    <input type="password" name="password" required placeholder="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
                 </label>
-                {!loading && <button className="btn">entrar</button>}
+                {!loading && <button className="btn">login</button>}
                 {loading && (
                     <button className="btn" disabled>
                         aguarde..

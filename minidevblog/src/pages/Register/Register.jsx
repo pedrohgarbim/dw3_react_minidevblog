@@ -39,8 +39,8 @@ const Register = () => {
     }, [authError]);
     return (
         <div className={styles.register}>
-            <h1>Register for you are allow to post something</h1>
-            <p>create your user and show your histories</p>
+            <h1>register for you are allow to post</h1>
+            <p>create your user and show your histories:</p>
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="">
                     <span>name:</span>
@@ -51,8 +51,8 @@ const Register = () => {
                     <input type="email" name="email" required placeholder="user email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
                 <label htmlFor="">
-                    <span>password - 6 characters:</span>
-                    <input type="password" name="password" required placeholder="user password)" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <span>password:</span>
+                    <input type="password" name="password" required placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </label>
                 <label htmlFor="">
                     <span>confirm password:</span>
@@ -63,11 +63,7 @@ const Register = () => {
                         register
                     </button>
                 )}
-                {!loading && (
-                    <button type="submit" className="btn">
-                        Wait
-                    </button>
-                )}
+                
 
                 {error && <p className="error">{error}</p>}
             </form>

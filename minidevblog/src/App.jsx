@@ -12,12 +12,13 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const { auth } = useAuthentication();
   const [user, setUser] = useState(null);
-  const loadingUser = user === null;
-
+  const loadingUser = user === undefined;
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
@@ -27,7 +28,6 @@ const App = () => {
       unsubscribe();
     };
   }, [auth]);
-
   if (loadingUser) {
     return <p>Loading...</p>;
   }
@@ -39,28 +39,17 @@ const App = () => {
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route
-                path="/login"
-                element={user ? <Navigate to="/" /> : <Login />}
-              />
-              <Route
-                path="/register"
-                element={user ? <Navigate to="/" /> : <Register />}
-              />
-              <Route path="*" element={<h1>Not Found</h1>} />
-              <Route
-                path="/posts/create"
-                element={user ? <CreatePost /> : <Navigate to="/login" />}
-              />
-              <Route
-                path="/dashboard"
-                element={user ? <Dashboard /> : <Navigate to="/login" />}
-              />
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/about" element={<About />}></Route>
+              <Route path="/login"element={<Login /> }></Route>
+              <Route path="/register" element={<Register />}></Route>
+              <Route path="*" element={<h1>Not Found</h1>}></Route>
+              <Route path="/posts/create" element={<CreatePost />}></Route>
+              <Route path="/dashboard"element={<Dashboard />}></Route>
             </Routes>
           </div>
         </Router>
+        <Footer />
       </AuthProvider>
     </div>
   );
