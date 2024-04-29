@@ -9,7 +9,7 @@ const About = () => {
                 Sobre o <span>MiniDevBlog</span>
             </h2>
             <p>
-                Este projeto é um blog feito usando o framework React no front-ende Firebase no back-end.
+                Este projeto é um blog feito usando o framework React no front-end e Firebase no back-end.
             </p>
             <Link to="/posts/create" className="btn">
                 Criar Post
