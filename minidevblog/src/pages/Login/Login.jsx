@@ -1,4 +1,5 @@
 import styles from "./Login.module.css";
+import React from "react"
 
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
@@ -19,8 +20,10 @@ const Login = () => {
             password,
         };
         const res = await login(user);
-        console.log(res);
+        console.table(res);
+        navigate("/post/create")
     };
+
 
     useEffect(() => {
         console.log(authError);
@@ -43,13 +46,14 @@ const Login = () => {
                     <input type="password" name="password" required placeholder="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
                 </label>
                 {!loading && <button className="btn">login</button>}
-                {loading && (
+                {loading && 
                     <button className="btn" disabled>
                         aguarde..
                     </button>
-                )}
-                {error && <p className="error">{error}</p>}
-            </form>
+                    
+                }
+                {error && <p className="error">incorrect password. {error}</p>}
+            </form> 
         </div>
     );
 };

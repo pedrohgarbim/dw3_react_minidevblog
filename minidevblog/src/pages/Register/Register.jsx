@@ -24,7 +24,7 @@ const Register = () => {
         };
 
         if (password!== confirmPassword){
-            setError("password incorrect.");
+            setError("incorret password.");
             return;
         }
 

@@ -23,11 +23,7 @@ const Navbar = () => {
             About
           </NavLink>
         </li>
-        {user && (
-          <li>
-            <button onClick={logout}>Logout</button>
-          </li>
-        )}
+        
         {!user && (
           <>
             <li>
@@ -56,7 +52,13 @@ const Navbar = () => {
             </li>
           </>
         )}
+        {user && (
+          <li>
+            <button onClick={logout}>Logout</button>
+          </li>
+        )}
       </ul>
+      
     </nav>
   );
 };
