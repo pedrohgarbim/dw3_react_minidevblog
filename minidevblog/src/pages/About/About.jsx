@@ -6,13 +6,13 @@ const About = () => {
     return (
         <div className={styles.about}>
             <h2>
-                Sobre o <span>MiniDevBlog</span>
+                About <span>MiniDevBlog</span>
             </h2>
             <p>
-                Este projeto é um blog feito usando o framework React no front-end e Firebase no back-end.
+                This project is a blog made using <a href="https://react.dev/">React Framework</a> on the front-end and <a href="https://firebase.google.com/">Firebase</a> on the back-end.
             </p>
             <Link to="/posts/create" className="btn">
-                Criar Post
+                Create Post
             </Link>
         </div>
     );
