@@ -3,6 +3,7 @@ import React from "react"
 
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -10,8 +11,8 @@ const Login = () => {
     const [error, setError] = useState("");
 
     const { login, error: authError, loading } = useAuthentication();
-
-    const handleSubmit = async (e) => {
+    const navigate = useNavigate();
+        const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
 
@@ -21,7 +22,8 @@ const Login = () => {
         };
         const res = await login(user);
         console.table(res);
-        navigate("/post/create")
+        navigate("/")
+        
     };
 
 
@@ -49,11 +51,10 @@ const Login = () => {
                 {loading && 
                     <button className="btn" disabled>
                         aguarde..
-                    </button>
-                    
+                    </button> 
                 }
-                {error && <p className="error">incorrect password. {error}</p>}
-            </form> 
+                {error && <p className="error">incorret password.{error}</p>}
+            </form>
         </div>
     );
 };
